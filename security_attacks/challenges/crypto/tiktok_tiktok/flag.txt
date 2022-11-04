@@ -1,0 +1,16 @@
+* ler o código server.py
+*username = admin
+*sempre que uma letra da password esteja certa, o programa adormece (sleep(1)) durante 1 seg.
+
+
+verifiy md5.hexdigest [0:8]
+
+* linguagem hexadecimal-> 0..9, a..f
+
+password_hash = 'd81e6348'
+
+Username: admin
+Password hash: d81e6348
+Please wait...
+* Authenticated
+TPAS{t1m3_matt3rs!}

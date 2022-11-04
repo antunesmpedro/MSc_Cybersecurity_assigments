@@ -1,0 +1,131 @@
+
+
+Sumário das Opções NMAP
+
+
+a última versão está sempre disponível em https://nmap.org/data/nmap.usage.txt.
+
+Algumas opções mais obscuras nem estão aqui incluídas.
+
+
+REFERENCIAS:
+https://nmap.org.com
+https://securitytrails.com/blog/top-15-nmap-commands-to-scan-remote-hosts
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+   nmap [Tipo(s) de Rastreio(Scan)] [Opções] {especificação do alvo}
+
+
+   EXEMPLOS:
+     nmap 193.136.39.125								# Scan de portas abertos
+     nmap -A 193.136.39.125/24			                                        # Scan agressivo na rede aos hosts 193.136.39.*
+     nmap -oN scan_ports.txt --top-ports 26 tpas.alunos.dcc.fc.up.pt		        # Scan das "26" portas mais comuns
+     nmap -v -sP tpas.alunos.dcc.fc.up.pt		                                # Ping Scan com -v para relatar cada passo executado pelo nmap
+     nmap -PI tpas.alunos.dcc.fc.up.pt							# Ping Scan para os serviços existentes
+     nmap -oN scan_cve_vuln.txt -Pn --script vuln 193.136.39.125			# Scan de vulnerabilidades
+     nmap -sV -A 193.136.39.125			                                        # Scan agressivo para deteção de serviços
+     nmap -O -A -oN scan_opsystem tpas.alunos.dcc.fc.up.pt				# Scan agressivo do SO/serviços e versões  
+     nmap -iL ip_list.txt				                                # List Scan aos ips no ficheiros "ip_list.txt"
+     nmap -v -iR 10000 -P0 -p 80			                                # Random Scan para os serviços http (porta 80)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+ESPECIFICAÇÂO DO ALVO:
+  Pode-se usar nomes de anfitriões(hostnames), Endereços IP, redes, etc.
+  Ex: scanme.nmap.org, microsoft.com/24, 192.168.0.1; 10.0-255.0-255.1-254
+
+  -iL <inputfilename>: Entrada(Input) de listas de anfitriões(hosts)/redes
+  -iR <num hosts>: Escolher alvos aleatoriamente
+  --exclude <host1[,host2][,host3],...>: Excluir anfitriões(hosts)/redes
+  --excludefile <exclude_file>: Lista de exclusões de um ficheiro
+
+
+DESCOBERTA DE ANFITRIÕES(HOSTS):
+  -sL: List Scan - lista simplesmente os alvos para efectuar o rastreio(scan)
+  -sP: Ping Scan - apenas determina se o anfitrião está online
+  -P0: Considera todos os anfitriões como online -- salta a descoberta de anfitriões
+  -PS/PA/PU [portlist]: rastreio de descoberta TCP SYN/ACK ou UDP para determinadas portas
+  -PE/PP/PM: Rastreio(scan) de descoberta ICMP echo, timestamp, and netmask request
+  -n/-R: Nunca resolver/Resolver sempre nomes de DNS [default: resolver algumas vezes]
+
+
+TÉCNICAS DE SCAN:
+  -sS/sT/sA/sW/sM: Rastreios(Scans) TCP SYN/Connect()/ACK/Window/Maimon
+  -sN/sF/sX: Rastreios(Scans) TCP Null, FIN, and Xmas
+  --scanflags <flags>: Customizar as TCP scan flags
+  -sI <anfitrião(host) zombie[:probeport]>: Idlescan 
+  -sO: Rastreio(Scan) de protocolo IP
+  -b <ftp relay host>: FTP bounce scan
+
+
+ESPECIFICAÇÃO DO PORTO E ORDEM DE RASTREIO:
+  -p <port ranges>: Apenas efectuar o rastreio(scan) de portas específicas
+    Ex: -p22; -p1-65535; -p U:53,111,137,T:21-25,80,139,8080
+  -F: Rápido - Efectua o rastreio(Scan) apenas das portas especificadas no ficheiro nmap-services
+  -r: Efectuar o rastreio(Scan) das portas consecutivas e não aleatoriamente
+
+
+DETECÇÃO DO SERVIÇO/VERSÃO:
+  -sV: Rastrear(scan) portas abertas para determinar a informação sobre o serviço/versão
+  --version-light: Limitar aos rastreios mais prováveis para identificação mais rápida
+  --version-all: Experimentar todos os rastreios para detectar a versão
+  --version-trace: Mostrar detalhadamente a actividade do rastreio(scan)
+ da versão (para debugging)
+
+
+DETECÇÃO DO SO:
+  -O: Permite a detecção do SO
+  --osscan-limit: Limitar a detecção de SO aos alvos promissores
+  --osscan-guess: Efectuar o rastreio do SO de forma mais agressiva
+
+
+TIMING AND PERFORMANCE:
+  -T[0-6]: Ajustar o tempo do modelo(template) (maior é mais rápido)
+  --min-hostgroup/max-hostgroup <tamanho>: Tamanho dos grupos de rastreio(scan)
+ de anfitrião(host) paralelo
+  --min-parallelism/max-parallelism <numprobes>: Rastreio paralelismo
+  --min-rtt-timeout/max-rtt-timeout/initial-rtt-timeout <msec>: Ajustar o
+      tempo de retorno do rastreio.
+  --host-timeout <msec>: Desistir de um alvo após este tempo
+  --scan-delay/--max-scan-delay <msec>: Ajustar esperas entre rastreios
+
+
+FIREWALL/IDS EVASÃO E DISFARÇE(SPOOFING):
+  -f; --mtu <val>: fragmentar pacotes (opcional com dado MTU)
+  -D <decoy1,decoy2[,ME],...>: Disfarça um rastreio(scan) com iscos           
+  -S <IP_Address>: Disfarçar(Spoof) endereço de origem
+  -e <iface>: Usar um interface especifico
+  -g/--source-port <portnum>: Usar um determinado numero de porta
+  --data-length <num>: Acrescentar dados aleatorios aos pacotes enviados
+  --ttl <val>: Ajustar o campo IP TTL tempo-de-vida
+  --spoof-mac <mac address, prefix, or vendor name>: Disfarçar(Spoof) o endereço MAC
+
+
+SAIDA(OUTPUT):
+  -oN/-oX/-oS/-oG <file>: Retorna os resultados do rastreio(scan) em XML normal, s|<rIpt kIddi3,
+     e formatados respectivamente para o ficheiro especificado
+  -oA <basename>: Saida(Output) nos três formatos principais
+  -v: Aumenta o nivel de informação apresentada(verbosity) (usar 2x para aumentar o efeito)
+  -d[level]: Ajusta o nivel de debugging (Áté 9 é significativo)
+  --packet-trace: Mostra todos os pacotes enviados e recebidos
+  --iflist: Mostra os interfaces do anfitrião e rotas (para debugging)
+  --append-output: Acrescenta, em vez de destruir/substituir,  ficheiros de resultados 
+  --resume <filename>: Continuar um rastreio cancelado(aborted)
+  --stylesheet <path/URL>: A XSL stylesheet para transformar retorno(output) XML para HTML
+  --no-stylesheet: Impedir que o Nmap de associar a XSL stylesheet com retorno(output) XML
+
+
+OUTROS(MISC):
+  -6: Permitir rastreio(scanning) IPv6 
+  -A: Permitir detecção do SO e versão
+  --datadir <dirname>: Especifica a localização do ficheiro de dados personalizado do Nmap
+  --send-eth/--send-ip: Enviar pacotes utilizando "raw ethernet frames" ou pacotes IP
+  --privileged: Assume que o utilizador possui os previlégios necessários
+  -V: Mostra a versão
+  -h: Mostra esta página de sumário de ajuda
+

@@ -1,0 +1,14 @@
+302     0B   https://careers.airbnb.com:443/app.js    -> REDIRECTS TO: https://www.airbnb.com/resources/hosting-homes/t/professional-hosting-36
+301   178B   https://careers.airbnb.com:443/archive.zip    -> REDIRECTS TO: https://one.airbnb.com/archive.zip
+301   178B   https://careers.airbnb.com:443/config.ini    -> REDIRECTS TO: https://one.airbnb.com/config.ini
+301   178B   https://careers.airbnb.com:443/configuration.ini    -> REDIRECTS TO: https://one.airbnb.com/configuration.ini
+200    22KB  https://careers.airbnb.com:443/favicon.ico
+302     0B   https://careers.airbnb.com:443/gulpfile.js    -> REDIRECTS TO: https://news.airbnb.com/gulpfile.js
+302     0B   https://careers.airbnb.com:443/index.js    -> REDIRECTS TO: https://www.airbnb.com/resources/hosting-homes/t/professional-hosting-36
+302     0B   https://careers.airbnb.com:443/main.js    -> REDIRECTS TO: https://www.airbnb.com/resources/hosting-homes/t/professional-hosting-36
+302     0B   https://careers.airbnb.com:443/mimosa-config.js    -> REDIRECTS TO: https://www.airbnb.com/resources/hosting-homes/t/professional-hosting-36
+301   178B   https://careers.airbnb.com:443/readme.txt    -> REDIRECTS TO: https://one.airbnb.com/readme.txt
+200    67B   https://careers.airbnb.com:443/robots.txt
+302     0B   https://careers.airbnb.com:443/server.js    -> REDIRECTS TO: https://www.airbnb.com/resources/hosting-homes/t/professional-hosting-36
+301   178B   https://careers.airbnb.com:443/web.zip    -> REDIRECTS TO: https://one.airbnb.com/web.zip
+301   178B   https://careers.airbnb.com:443/wp-config.php.txt    -> REDIRECTS TO: https://one.airbnb.com/wp-config.php.txt

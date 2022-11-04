@@ -1,0 +1,33 @@
+# Nmap 7.60 scan initiated Wed Nov  4 22:41:45 2020 as: nmap -oN scan_ports.txt --top-ports 26 tpas.alunos.dcc.fc.up.pt
+Nmap scan report for tpas.alunos.dcc.fc.up.pt (193.136.39.125)
+Host is up (0.020s latency).
+
+PORT     STATE    SERVICE
+21/tcp   filtered ftp
+22/tcp   filtered ssh
+23/tcp   filtered telnet
+25/tcp   filtered smtp
+53/tcp   filtered domain
+80/tcp   open     http
+110/tcp  filtered pop3
+111/tcp  filtered rpcbind
+135/tcp  filtered msrpc
+139/tcp  filtered netbios-ssn
+143/tcp  filtered imap
+199/tcp  filtered smux
+443/tcp  open     https
+445/tcp  filtered microsoft-ds
+465/tcp  filtered smtps
+587/tcp  filtered submission
+993/tcp  filtered imaps
+995/tcp  filtered pop3s
+1025/tcp filtered NFS-or-IIS
+1720/tcp open     h323q931
+1723/tcp filtered pptp
+3306/tcp filtered mysql
+3389/tcp filtered ms-wbt-server
+5900/tcp filtered vnc
+8080/tcp filtered http-proxy
+8888/tcp filtered sun-answerbook
+
+# Nmap done at Wed Nov  4 22:41:46 2020 -- 1 IP address (1 host up) scanned in 1.51 seconds

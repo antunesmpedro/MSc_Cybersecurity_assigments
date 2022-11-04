@@ -1,0 +1,5 @@
+telnet 159.89.31.211 23
+
+user:challenge2
+pass:verystrongpasswd
+

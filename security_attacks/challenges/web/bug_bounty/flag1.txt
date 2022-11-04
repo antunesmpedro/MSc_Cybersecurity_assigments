@@ -1,0 +1,35 @@
+LAB_2 RECONHECIMENTO: muito importante para conhecer o alvo de ataque e descobrir possíveis vulnerabilidades, ficheiros "esquecidos" e "well-known".
+
+dig -t mx 167.99.243.7:5015
+
+subfinder -d 167.99.243.7:5015
+
+dirsearch -u http://167.99.243.7:5015/ -E
+
+
+  _|. _ _  _  _  _ _|_    v0.4.0
+ (_||| _) (/_(_|| (_| )
+
+Extensions: php, asp, aspx, jsp, html, htm, js | HTTP method: GET | Threads: 20 | Wordlist size: 9924
+
+Error Log: /home/pedroantunes/Desktop/tpas/dirsearch/logs/errors-21-01-06_16-01-55.log
+
+Target: http://167.99.243.7:5015/
+
+Output File: /home/pedroantunes/Desktop/tpas/dirsearch/reports/167.99.243.7/_21-01-06_16-01-55.txt
+
+[16:01:55] Starting: 
+[16:02:02] 200 -  184B  - /.well-known/security.txt
+[16:02:33] 200 -  119B  - /index.html
+[16:02:45] 200 -  131B  - /robots.txt
+
+
+    
+
+
+
+
+  ficheiro -> http://167.99.243.7:5015/.well-known/security.txt
+                # If you find any vulnerabilities in our website you can contact us
+		# Challenge credits: CyberSecurityChallengePT / AP2SI
+		contact: TPAS{always_remember_to_search_for_w3ll_known_fil3s}

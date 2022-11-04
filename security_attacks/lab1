@@ -1,0 +1,37 @@
+- Como mudar de directório para a nossa home folder?
+	cd ~	
+
+- Como voltar para o directório em que estavamos antes da última mudança de directório?
+	cd -
+
+- Como obter o tipo de um ficheiro?
+ 	file [ficheiro]
+	
+- Como listar ficheiros ocultos na home folder?
+	ls -la ~
+
+- Como mudar o utilizador para root de forma permanente?
+	su -
+
+- Como alterar a password do utilizador através do terminal?
+	passwd
+
+- Como alterar a password de qualquer utilizador?
+	sudo passwd [user]
+
+- Como obter detalhes sobre o nosso utilizador actual com maior detalhe? (i.e, obter o seu ID, grupo)
+	id
+
+- Como obter a versão do kernel Linux actual?
+	uname -v
+
+- Como obter mais informações sobre um comando através das man pages?
+	man [cmd]
+
+- Como obter uma página web através do terminal? Que ferramentas existem?
+	wget [URL]
+	curl
+
+- Como obter o nosso endereço IP interno? E o externo?
+	ip addr | grep inet
+	wget -qo- ifconfig.me/ip

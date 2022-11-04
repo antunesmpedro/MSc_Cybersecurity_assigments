@@ -1,0 +1,756 @@
+Nmap scan report for router.dcc.fc.up.pt (193.136.39.1)
+Host is up (0.044s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE      VERSION
+264/tcp open  fw1-topology Check Point FireWall-1 Topology
+443/tcp open  ssl/http     Connectra Check Point Web Security httpd
+|_http-server-header: CPWS
+| http-title: FCUP VPN - You have no cookie support - Please enable cookies ...
+|_Requested resource was /Login/Login?CheckCookieSupport=1
+| ssl-cert: Subject: commonName=vpn.fc.up.pt/organizationName=Universidade do Porto/stateOrProvinceName=Porto/countryName=PT
+| Subject Alternative Name: DNS:vpn.fc.up.pt, DNS:www.vpn.fc.up.pt
+| Not valid before: 2020-07-10T00:00:00
+|_Not valid after:  2021-07-10T23:59:59
+|_ssl-date: 2020-11-04T22:28:50+00:00; 0s from scanner time.
+Service Info: Devices: firewall, security-misc
+
+Nmap scan report for acm.up.pt (193.136.39.7)
+Host is up (0.036s latency).
+Not shown: 999 filtered ports
+PORT   STATE SERVICE VERSION
+25/tcp open  smtp    Postfix smtpd
+|_smtp-commands: smtp.dcc.fc.up.pt, PIPELINING, SIZE 51200000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, 
+| ssl-cert: Subject: commonName=smtp.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:smtp.dcc.fc.up.pt
+| Not valid before: 2019-01-30T00:00:00
+|_Not valid after:  2021-02-03T12:00:00
+|_ssl-date: TLS randomness does not represent time
+Service Info: Host:  smtp.dcc.fc.up.pt
+
+Nmap scan report for swerc.up.pt (193.136.39.8)
+Host is up (0.038s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+25/tcp  open  smtp     Postfix smtpd
+|_smtp-commands: smtp.dcc.fc.up.pt, PIPELINING, SIZE 51200000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, 
+| ssl-cert: Subject: commonName=smtp.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:smtp.dcc.fc.up.pt
+| Not valid before: 2019-01-30T00:00:00
+|_Not valid after:  2021-02-03T12:00:00
+|_ssl-date: TLS randomness does not represent time
+443/tcp open  ssl/http Apache httpd 2.4.6 (OpenSSL/1.0.2k-fips PHP/5.4.16)
+|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
+|_http-title: Did not follow redirect to https://www.dcc.fc.up.pt/site/
+| ssl-cert: Subject: commonName=www.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:www.dcc.fc.up.pt, DNS:dcc.fc.up.pt
+| Not valid before: 2019-01-23T00:00:00
+|_Not valid after:  2021-01-27T12:00:00
+|_ssl-date: TLS randomness does not represent time
+Service Info: Hosts:  smtp.dcc.fc.up.pt, www.dcc.fc.up.pt
+
+Nmap scan report for www.dcc.fc.up.pt (193.136.39.12)
+Host is up (0.022s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE   VERSION
+443/tcp  open  ssl/http  Apache httpd 2.4.6 (OpenSSL/1.0.2k-fips PHP/5.4.16)
+|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
+| http-title: Bem vindo
+|_Requested resource was https://www.dcc.fc.up.pt/site/
+| ssl-cert: Subject: commonName=www.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:www.dcc.fc.up.pt, DNS:dcc.fc.up.pt
+| Not valid before: 2019-01-23T00:00:00
+|_Not valid after:  2021-01-27T12:00:00
+|_ssl-date: TLS randomness does not represent time
+5666/tcp open  ssl/nrpe?
+
+Nmap scan report for 193.136.39.13
+Host is up (0.024s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 7.4p1 Debian 10+deb9u7 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 47:3c:28:74:09:c3:5b:af:6e:85:ee:b2:40:b1:6f:ea (RSA)
+|   256 f3:e1:ca:af:9f:f9:72:75:dd:1d:13:27:4f:58:a7:d4 (ECDSA)
+|_  256 94:3b:f4:0f:17:8b:90:8a:8e:20:88:6f:01:f1:a1:46 (EdDSA)
+5666/tcp open  ssl/nrpe?
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for webmail.dcc.fc.up.pt (193.136.39.15)
+Host is up (0.025s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE   VERSION
+443/tcp  open  ssl/http  Apache httpd 2.4.6 (OpenSSL/1.0.2k-fips PHP/5.4.16)
+|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
+| http-title: Horde :: Log in
+|_Requested resource was /horde/login.php?url=https%3A%2F%2Fwebmail.dcc.fc.up.pt%2Fhorde%2Fimp%2F%3F_t%3D1604528948%26_h%3Dq-5XaMtI68OQXz-nAyJ0LzbUNNM&horde_logout_token=Do8YDypLvfr8bWigCfYE7Uy
+| ssl-cert: Subject: commonName=www.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:www.dcc.fc.up.pt, DNS:dcc.fc.up.pt
+| Not valid before: 2019-01-23T00:00:00
+|_Not valid after:  2021-01-27T12:00:00
+|_ssl-date: TLS randomness does not represent time
+5666/tcp open  ssl/nrpe?
+Service Info: Host: www.dcc.fc.up.pt
+
+Nmap scan report for cvs.dcc.fc.up.pt (193.136.39.19)
+Host is up (0.10s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 6.6.1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9f:0d:e6:69:fd:a9:fe:d5:13:b0:bc:b7:2d:7c:3e:7d (RSA)
+|_  256 a7:5a:e6:fb:0c:49:1b:8d:c8:bb:ee:7e:d7:05:70:6f (ECDSA)
+443/tcp open  ssl/http Apache httpd 2.4.6 ((CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 SVN/1.7.14)
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips PHP/5.4.16 SVN/1.7.14
+|_http-title: Apache HTTP Server Test Page powered by CentOS
+| ssl-cert: Subject: commonName=svn.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:svn.dcc.fc.up.pt
+| Not valid before: 2019-02-01T00:00:00
+|_Not valid after:  2021-02-05T12:00:00
+|_ssl-date: 2020-11-04T22:28:54+00:00; 0s from scanner time.
+
+Nmap scan report for lists.dcc.fc.up.pt (193.136.39.22)
+Host is up (0.046s latency).
+Not shown: 999 filtered ports
+PORT     STATE SERVICE   VERSION
+5666/tcp open  ssl/nrpe?
+
+Nmap scan report for cracs.fc.up.pt (193.136.39.24)
+Host is up (0.046s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 5.3p1 Debian 3ubuntu7.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 42:ef:69:db:d9:11:59:53:70:d5:b7:3e:44:2f:6a:24 (DSA)
+|_  2048 78:54:2d:a6:a1:bf:b8:43:4f:0e:dc:01:44:19:46:6a (RSA)
+443/tcp open  ssl/http Apache httpd 2.2.14 ((Ubuntu))
+| http-robots.txt: 35 disallowed entries (15 shown)
+| /includes/ /misc/ /modules/ /profiles/ /scripts/ 
+| /themes/ /CHANGELOG.txt /cron.php /INSTALL.mysql.txt 
+| /INSTALL.pgsql.txt /install.php /INSTALL.txt /LICENSE.txt 
+|_/MAINTAINERS.txt /update.php
+|_http-server-header: Apache/2.2.14 (Ubuntu)
+|_http-title: Site off-line | Drupal
+| ssl-cert: Subject: commonName=cracs.fc.up.pt/organizationName=Universidade do Porto/stateOrProvinceName=Porto/countryName=PT
+| Subject Alternative Name: DNS:cracs.fc.up.pt
+| Not valid before: 2016-09-15T00:00:00
+|_Not valid after:  2019-09-20T12:00:00
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for cvdigup.up.pt (193.136.39.31)
+Host is up (0.024s latency).
+Not shown: 999 filtered ports
+PORT     STATE SERVICE   VERSION
+5666/tcp open  ssl/nrpe?
+
+Nmap scan report for 193.136.39.36
+Host is up (0.020s latency).
+Not shown: 993 filtered ports
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 5.3p1 Debian 3ubuntu7 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 62:42:21:14:a9:80:e1:48:3d:ae:0f:ce:62:d4:04:1e (DSA)
+|_  2048 7a:6b:51:55:ec:52:0f:f2:64:80:3c:24:2d:a5:ee:30 (RSA)
+25/tcp   open  smtp      Postfix smtpd
+|_smtp-commands: pic-server.portointeractivecenter.org, PIPELINING, SIZE 10240000, VRFY, ETRN, STARTTLS, AUTH PLAIN LOGIN, AUTH=PLAIN LOGIN, ENHANCEDSTATUSCODES, 8BITMIME, DSN, 
+| ssl-cert: Subject: commonName=pinc-server.dcc.fc.up.pt
+| Not valid before: 2010-08-12T14:45:14
+|_Not valid after:  2020-08-09T14:45:14
+|_ssl-date: 2020-11-04T22:23:53+00:00; -5m48s from scanner time.
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+|     SSL2_DES_64_CBC_WITH_MD5
+|     SSL2_RC2_128_CBC_WITH_MD5
+|     SSL2_RC4_128_WITH_MD5
+|     SSL2_RC4_128_EXPORT40_WITH_MD5
+|_    SSL2_RC2_128_CBC_EXPORT40_WITH_MD5
+110/tcp  open  pop3      Courier pop3d
+|_pop3-capabilities: TOP UIDL IMPLEMENTATION(Courier Mail Server) USER LOGIN-DELAY(10) PIPELINING STLS
+| ssl-cert: Subject: commonName=localhost/organizationName=Courier Mail Server/stateOrProvinceName=NY/countryName=US
+| Not valid before: 2015-10-22T11:00:55
+|_Not valid after:  2016-10-21T11:00:55
+|_ssl-date: 2020-11-04T22:23:54+00:00; -5m48s from scanner time.
+443/tcp  open  ssl/http  Apache httpd 2.2.14 ((Ubuntu))
+|_http-server-header: Apache/2.2.14 (Ubuntu)
+|_http-title: Did not follow redirect to http://www.portointeractivecenter.org/site/
+| ssl-cert: Subject: commonName=pinc-server.dcc.fc.up.pt
+| Not valid before: 2010-08-12T14:45:14
+|_Not valid after:  2020-08-09T14:45:14
+|_ssl-date: 2020-11-04T22:23:03+00:00; -5m48s from scanner time.
+993/tcp  open  ssl/imap  Courier Imapd (released 2008)
+|_imap-capabilities: completed THREAD=REFERENCES QUOTA IDLE THREAD=ORDEREDSUBJECT UIDPLUS CAPABILITY CHILDREN NAMESPACE IMAP4rev1 OK ACL2=UNIONA0001 SORT ACL AUTH=PLAIN
+| ssl-cert: Subject: commonName=localhost/organizationName=Courier Mail Server/stateOrProvinceName=NY/countryName=US
+| Not valid before: 2015-10-22T11:00:56
+|_Not valid after:  2016-10-21T11:00:56
+|_ssl-date: 2020-11-04T22:23:22+00:00; -5m49s from scanner time.
+| sslv2: 
+|   SSLv2 supported
+|_  ciphers: none
+995/tcp  open  ssl/pop3  Courier pop3d
+|_pop3-capabilities: TOP UIDL LOGIN-DELAY(10) IMPLEMENTATION(Courier Mail Server) PIPELINING USER
+| ssl-cert: Subject: commonName=localhost/organizationName=Courier Mail Server/stateOrProvinceName=NY/countryName=US
+| Not valid before: 2015-10-22T11:00:55
+|_Not valid after:  2016-10-21T11:00:55
+|_ssl-date: 2020-11-04T22:23:07+00:00; -5m48s from scanner time.
+| sslv2: 
+|   SSLv2 supported
+|_  ciphers: none
+5666/tcp open  ssl/nrpe?
+Service Info: Host:  pic-server.portointeractivecenter.org; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Host script results:
+|_clock-skew: mean: -5m48s, deviation: 0s, median: -5m48s
+
+Nmap scan report for digiscope.up.pt (193.136.39.39)
+Host is up (0.060s latency).
+Not shown: 999 filtered ports
+PORT     STATE SERVICE   VERSION
+5666/tcp open  ssl/nrpe?
+
+Nmap scan report for authenticus.dcc.fc.up.pt (193.136.39.47)
+Host is up (0.025s latency).
+Not shown: 997 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|_  2048 3c:21:8a:e4:84:e9:50:2f:8c:21:07:1a:a8:04:c5:e6 (RSA)
+25/tcp  open  smtp     Postfix smtpd
+|_smtp-commands: smtp.dcc.fc.up.pt, PIPELINING, SIZE 51200000, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, 
+| ssl-cert: Subject: commonName=smtp.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:smtp.dcc.fc.up.pt
+| Not valid before: 2019-01-30T00:00:00
+|_Not valid after:  2021-02-03T12:00:00
+|_ssl-date: TLS randomness does not represent time
+443/tcp open  ssl/http Apache httpd 2.4.18 ((Ubuntu))
+| http-robots.txt: 14 disallowed entries 
+| /en/markedList/* /pt/markedList/* /en/users/* 
+| /pt/users/* /en/markedList /pt/markedList /en/users /pt/users 
+| /en/publications/searchResults /pt/publications/searchResults 
+| /en/publications/searchResults/* /pt/publications/searchResults/* 
+|_/pt/profileOfInstitution/* /en/profileOfInstitution/*
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: 400 Bad Request
+| ssl-cert: Subject: commonName=authenticus.pt
+| Subject Alternative Name: DNS:authenticus.pt, DNS:www.authenticus.pt
+| Not valid before: 2020-10-11T12:02:22
+|_Not valid after:  2021-01-09T12:02:22
+|_ssl-date: TLS randomness does not represent time
+Service Info: Host:  smtp.dcc.fc.up.pt; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for mooshak.dcc.fc.up.pt (193.136.39.54)
+Host is up (0.022s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 8.0 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 44:42:9d:80:be:dd:13:80:07:36:3c:d2:13:a6:c7:51 (RSA)
+|   256 11:e1:db:be:31:81:c7:a8:11:c1:3c:2f:f2:cb:bd:04 (ECDSA)
+|_  256 69:e0:fa:9e:f5:b5:aa:64:9e:57:a7:2e:9a:87:01:8d (EdDSA)
+443/tcp open  ssl/http Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1c)
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1c
+|_http-title: Mooshak
+| ssl-cert: Subject: commonName=mooshak.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:mooshak.dcc.fc.up.pt, DNS:www.mooshak.dcc.fc.up.pt
+| Not valid before: 2019-12-18T00:00:00
+|_Not valid after:  2021-12-22T12:00:00
+
+Nmap scan report for ofelia.dcc.fc.up.pt (193.136.39.59)
+Host is up (0.028s latency).
+All 1000 scanned ports on ofelia.dcc.fc.up.pt (193.136.39.59) are filtered
+
+Nmap scan report for compass.dcc.fc.up.pt (193.136.39.60)
+Host is up (0.029s latency).
+Not shown: 997 filtered ports
+PORT    STATE SERVICE    VERSION
+22/tcp  open  ssh        OpenSSH 5.9 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 10:ae:db:ca:fe:1b:ba:ee:0f:ac:a1:0a:40:5e:ff:23 (DSA)
+|_  2048 2c:0e:c0:f4:0c:73:e5:7d:87:c2:d5:ac:64:28:e2:a7 (RSA)
+80/tcp  open  tcpwrapped
+|_http-server-header: Apache/2.2.23 (Fedora)
+443/tcp open  ssl/http   Apache Tomcat/Coyote JSP engine 1.1
+| http-cookie-flags: 
+|   /: 
+|     JSESSIONID: 
+|_      httponly flag not set
+|_http-server-header: Apache-Coyote/1.1
+|_http-title: Validar
+| ssl-cert: Subject: commonName=bliss.fc.up.pt/organizationName=Universidade do Porto/stateOrProvinceName=Porto/countryName=PT
+| Subject Alternative Name: DNS:bliss.fc.up.pt, DNS:compass.dcc.fc.up.pt
+| Not valid before: 2020-09-03T00:00:00
+|_Not valid after:  2021-09-03T23:59:59
+|_ssl-date: 2020-11-04T22:28:55+00:00; 0s from scanner time.
+
+Nmap scan report for compass-d.dcc.fc.up.pt (193.136.39.62)
+Host is up (0.030s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 5.9 (protocol 2.0)
+| ssh-hostkey: 
+|   1024 10:ae:db:ca:fe:1b:ba:ee:0f:ac:a1:0a:40:5e:ff:23 (DSA)
+|_  2048 2c:0e:c0:f4:0c:73:e5:7d:87:c2:d5:ac:64:28:e2:a7 (RSA)
+443/tcp open  ssl/http Apache httpd 2.2.23
+|_http-title: 503 Service Temporarily Unavailable
+| ssl-cert: Subject: commonName=bliss-d.fc.up.pt/organizationName=Universidade do Porto/stateOrProvinceName=Porto/countryName=PT
+| Subject Alternative Name: DNS:bliss-d.fc.up.pt, DNS:bliss-d.dcc.fc.up.pt, DNS:compass-d.dcc.fc.up.pt, DNS:liacc-d.dcc.fc.up.pt
+| Not valid before: 2020-09-03T00:00:00
+|_Not valid after:  2021-09-03T23:59:59
+|_ssl-date: 2020-11-04T22:29:14+00:00; -1s from scanner time.
+Service Info: Host: bliss-d.dcc.fc.up.pt
+
+Host script results:
+|_clock-skew: mean: -1s, deviation: 0s, median: -1s
+
+Nmap scan report for khilas.dcc.fc.up.pt (193.136.39.65)
+Host is up (0.029s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 7.4p1 Debian 10+deb9u6 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 b4:ca:08:53:93:60:27:85:e7:26:ef:cb:35:63:72:21 (RSA)
+|   256 01:ff:b9:ad:f9:d9:3c:9c:be:5c:31:e0:d6:cb:f2:4f (ECDSA)
+|_  256 bd:d5:f6:36:91:cc:86:8e:a1:2d:54:1c:21:07:22:1c (EdDSA)
+443/tcp open  ssl/http Apache httpd 2.4.25 ((Debian))
+|_http-server-header: Apache/2.4.25 (Debian)
+|_http-title: Apache2 Debian Default Page: It works
+| ssl-cert: Subject: commonName=desco.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:desco.up.pt, DNS:www.desco.up.pt
+| Not valid before: 2019-11-26T00:00:00
+|_Not valid after:  2021-11-30T12:00:00
+|_ssl-date: TLS randomness does not represent time
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for kashmir.dcc.fc.up.pt (193.136.39.69)
+Host is up (0.044s latency).
+All 1000 scanned ports on kashmir.dcc.fc.up.pt (193.136.39.69) are filtered
+
+Nmap scan report for authenticus-old.dcc.fc.up.pt (193.136.39.70)
+Host is up (0.044s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 7.2p2 Ubuntu 4ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+443/tcp open  ssl/http Apache httpd 2.4.18 ((Ubuntu))
+| http-robots.txt: 14 disallowed entries 
+| /en/markedList/* /pt/markedList/* /en/users/* 
+| /pt/users/* /en/markedList /pt/markedList /en/users /pt/users 
+| /en/publications/searchResults /pt/publications/searchResults 
+| /en/publications/searchResults/* /pt/publications/searchResults/* 
+|_/pt/profileOfInstitution/* /en/profileOfInstitution/*
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+|_http-title: Home
+| ssl-cert: Subject: commonName=authenticus.pt
+| Subject Alternative Name: DNS:authenticus.pt, DNS:www.authenticus.pt
+| Not valid before: 2020-10-11T12:02:22
+|_Not valid after:  2021-01-09T12:02:22
+|_ssl-date: TLS randomness does not represent time
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for oni.dcc.fc.up.pt (193.136.39.77)
+Host is up (0.030s latency).
+Not shown: 999 filtered ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 fa:2c:66:24:29:b9:52:fd:dc:4b:93:88:ee:dc:8c:d9 (DSA)
+|   2048 46:71:2a:03:5e:d2:bd:a0:3a:17:27:92:19:7a:5f:89 (RSA)
+|_  256 99:72:86:eb:ec:a9:25:f5:05:c3:14:a3:83:45:30:d4 (ECDSA)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for edaminor.dcc.fc.up.pt (193.136.39.81)
+Host is up (0.051s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE VERSION
+22/tcp  open  ssh     OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.8 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 ed:d9:d4:96:5a:b8:83:b5:7a:c3:48:5a:d1:56:ae:ef (DSA)
+|   2048 a8:82:06:58:99:77:56:ce:fe:49:02:a1:e1:96:92:26 (RSA)
+|_  256 69:e0:45:8c:81:24:82:da:73:a2:79:e4:8c:02:b6:e5 (ECDSA)
+443/tcp open  https?
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for dcctalks.dcc.fc.up.pt (193.136.39.82)
+Host is up (0.066s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9f:0d:e6:69:fd:a9:fe:d5:13:b0:bc:b7:2d:7c:3e:7d (RSA)
+|_  256 a7:5a:e6:fb:0c:49:1b:8d:c8:bb:ee:7e:d7:05:70:6f (ECDSA)
+443/tcp open  ssl/http Apache httpd 2.4.6 ((CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16)
+|_http-generator: WordPress 4.3.25
+|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
+|_http-title: DCC Talks
+| ssl-cert: Subject: commonName=dcctalks.dcc.fc.up.pt/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
+| Not valid before: 2015-09-10T13:55:36
+|_Not valid after:  2016-09-09T13:55:36
+|_ssl-date: TLS randomness does not represent time
+
+Nmap scan report for hyrax.dcc.fc.up.pt (193.136.39.89)
+Host is up (0.090s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 6.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 5b:f1:39:e6:bf:09:c2:a1:8a:a1:91:d7:d2:d5:e2:93 (RSA)
+|_  256 fe:dd:0b:1f:8b:09:2b:6a:81:fd:bb:4c:e6:ab:10:8e (ECDSA)
+443/tcp open  ssl/http Apache httpd 2.4.10 ((Fedora) OpenSSL/1.0.1e-fips mod_python/3.5.0- Python/2.7.5 PHP/5.5.26 SVN/1.8.11 mod_wsgi/3.5)
+|_http-server-header: Apache/2.4.10 (Fedora) OpenSSL/1.0.1e-fips mod_python/3.5.0- Python/2.7.5 PHP/5.5.26 SVN/1.8.11 mod_wsgi/3.5
+|_http-title: Hyrax: Crowd-Sourcing Mobile Devices to Develop Edge Clouds
+| ssl-cert: Subject: commonName=hyrax.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:hyrax.dcc.fc.up.pt
+| Not valid before: 2019-03-20T00:00:00
+|_Not valid after:  2021-03-24T12:00:00
+|_ssl-date: 2020-11-04T22:29:56+00:00; 0s from scanner time.
+
+Nmap scan report for ecmlpkdd2015.dcc.fc.up.pt (193.136.39.91)
+Host is up (0.032s latency).
+Not shown: 999 filtered ports
+PORT    STATE SERVICE  VERSION
+443/tcp open  ssl/http Apache httpd 2.4.10 ((Fedora) OpenSSL/1.0.1e-fips PHP/5.5.23 SVN/1.8.11)
+|_http-generator: Drupal 7 (http://drupal.org)
+| http-robots.txt: 36 disallowed entries (15 shown)
+| /includes/ /misc/ /modules/ /profiles/ /scripts/ 
+| /themes/ /CHANGELOG.txt /cron.php /INSTALL.mysql.txt 
+| /INSTALL.pgsql.txt /INSTALL.sqlite.txt /install.php /INSTALL.txt 
+|_/LICENSE.txt /MAINTAINERS.txt
+|_http-server-header: Apache/2.4.10 (Fedora) OpenSSL/1.0.1e-fips PHP/5.5.23 SVN/1.8.11
+|_http-title: ECMLPKDD2015
+| ssl-cert: Subject: commonName=ecmlpkdd2015.dcc.fc.up.pt/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
+| Not valid before: 2014-11-18T07:46:16
+|_Not valid after:  2015-11-18T07:46:16
+|_ssl-date: 2020-11-04T22:29:53+00:00; 0s from scanner time.
+
+Nmap scan report for swerc-coaches.dcc.fc.up.pt (193.136.39.96)
+Host is up (0.11s latency).
+Not shown: 999 filtered ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 3d:37:0b:0a:87:1e:6a:11:ac:b4:b5:2a:20:76:14:24 (RSA)
+|   256 c0:dc:31:7a:31:eb:65:ff:3a:32:d7:4a:7a:5d:5d:1c (ECDSA)
+|_  256 da:66:45:93:af:90:c5:dd:2c:19:c6:61:33:12:08:ab (EdDSA)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for webmail.alunos.dcc.fc.up.pt (193.136.39.103)
+Host is up (0.043s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 6.6.1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9f:0d:e6:69:fd:a9:fe:d5:13:b0:bc:b7:2d:7c:3e:7d (RSA)
+|_  256 a7:5a:e6:fb:0c:49:1b:8d:c8:bb:ee:7e:d7:05:70:6f (ECDSA)
+443/tcp open  ssl/http Apache httpd 2.2.8
+|_http-server-header: Apache/2.2.8 (Mandriva Linux/PREFORK-6mdv2008.1)
+| http-title: Mail :: Webmail dos Alunos do DCC
+|_Requested resource was https://webmail.alunos.dcc.fc.up.pt/horde/imp/
+| ssl-cert: Subject: commonName=webmail.alunos.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:webmail.alunos.dcc.fc.up.pt
+| Not valid before: 2019-01-24T00:00:00
+|_Not valid after:  2021-01-28T12:00:00
+|_ssl-date: 2020-11-04T22:29:18+00:00; 0s from scanner time.
+
+Nmap scan report for lists.alunos.dcc.fc.up.pt (193.136.39.105)
+Host is up (0.031s latency).
+Not shown: 999 filtered ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 6.6.1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9f:0d:e6:69:fd:a9:fe:d5:13:b0:bc:b7:2d:7c:3e:7d (RSA)
+|_  256 a7:5a:e6:fb:0c:49:1b:8d:c8:bb:ee:7e:d7:05:70:6f (ECDSA)
+
+Nmap scan report for gitlab.alunos.dcc.fc.up.pt (193.136.39.108)
+Host is up (0.034s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 92:f4:a5:b7:48:e8:55:ec:27:6b:2c:65:a9:07:5d:22 (RSA)
+|   256 9a:5a:99:32:47:b6:2b:24:2b:ed:b6:26:61:b8:5c:e2 (ECDSA)
+|_  256 d5:aa:f6:5a:2c:da:1d:57:c3:a6:c7:40:5e:36:83:85 (EdDSA)
+443/tcp open  ssl/http nginx
+| http-robots.txt: 57 disallowed entries (15 shown)
+| / /autocomplete/users /search /api /admin /profile 
+| /dashboard /projects/new /groups/new /groups/*/edit /users /help 
+|_/s/ /snippets/new /snippets/*/edit
+|_http-server-header: nginx
+| http-title: Sign in \xC2\xB7 GitLab
+|_Requested resource was https://gitlab.alunos.dcc.fc.up.pt/users/sign_in
+| ssl-cert: Subject: commonName=gitlab.alunos.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:gitlab.alunos.dcc.fc.up.pt, DNS:www.gitlab.alunos.dcc.fc.up.pt
+| Not valid before: 2020-02-24T00:00:00
+|_Not valid after:  2022-02-28T12:00:00
+|_ssl-date: TLS randomness does not represent time
+| tls-nextprotoneg: 
+|   h2
+|_  http/1.1
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for twserver.alunos.dcc.fc.up.pt (193.136.39.114)
+Host is up (0.032s latency).
+Not shown: 997 filtered ports
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9f:0d:e6:69:fd:a9:fe:d5:13:b0:bc:b7:2d:7c:3e:7d (RSA)
+|_  256 a7:5a:e6:fb:0c:49:1b:8d:c8:bb:ee:7e:d7:05:70:6f (ECDSA)
+443/tcp  open  ssl/http  Apache httpd 2.4.6 ((CentOS) OpenSSL/1.0.2k-fips)
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips
+|_http-title: Apache HTTP Server Test Page powered by CentOS
+| ssl-cert: Subject: commonName=twserver.alunos.dcc.fc.up.pt/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
+| Not valid before: 2015-10-29T11:41:48
+|_Not valid after:  2016-10-28T11:41:48
+|_ssl-date: TLS randomness does not represent time
+5666/tcp open  ssl/nrpe?
+
+Nmap scan report for nucc.dcc.fc.up.pt (193.136.39.116)
+Host is up (0.030s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 7.4 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 2c:75:41:45:56:1a:93:5d:ee:4f:80:59:77:20:5b:77 (RSA)
+|   256 78:14:f6:d5:03:8e:4e:c0:b7:ad:19:ed:80:28:ea:88 (ECDSA)
+|_  256 61:7e:9f:e9:46:19:33:30:a8:a1:91:13:6e:33:6d:92 (EdDSA)
+5666/tcp open  ssl/nrpe?
+
+Nmap scan report for fedora-srv01.alunos.dcc.fc.up.pt (193.136.39.118)
+Host is up (0.026s latency).
+Not shown: 999 filtered ports
+PORT    STATE SERVICE  VERSION
+443/tcp open  ssl/http Apache httpd 2.4.37 ((centos) OpenSSL/1.1.1c)
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/2.4.37 (centos) OpenSSL/1.1.1c
+|_http-title: Mooshak
+| ssl-cert: Subject: commonName=mooshak.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:mooshak.dcc.fc.up.pt, DNS:www.mooshak.dcc.fc.up.pt
+| Not valid before: 2019-12-18T00:00:00
+|_Not valid after:  2021-12-22T12:00:00
+
+Nmap scan report for sfp.dcc.fc.up.pt (193.136.39.121)
+Host is up (0.062s latency).
+Not shown: 997 filtered ports
+PORT     STATE SERVICE    VERSION
+80/tcp   open  tcpwrapped
+443/tcp  open  ssl/http   Apache httpd 2.4.6 ((CentOS) OpenSSL/1.0.1e-fips)
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips
+|_http-title: Apache HTTP Server Test Page powered by CentOS
+| ssl-cert: Subject: commonName=localhost.localdomain/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
+| Not valid before: 2015-01-14T16:35:52
+|_Not valid after:  2016-01-14T16:35:52
+|_ssl-date: 2020-11-04T22:29:09+00:00; 0s from scanner time.
+|_tls-nextprotoneg: <empty>
+5666/tcp open  ssl/nrpe?
+
+Nmap scan report for modys.dcc.fc.up.pt (193.136.39.122)
+Host is up (0.027s latency).
+Not shown: 997 filtered ports
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 c4:32:ad:4c:d3:52:08:88:36:27:7d:bb:62:d0:f3:3e (DSA)
+|   2048 8d:7b:a8:d1:19:37:bd:6b:f1:86:75:f5:93:4e:b8:d5 (RSA)
+|   256 30:dc:87:91:4b:45:e9:e3:93:a7:44:8b:f7:b3:1f:90 (ECDSA)
+|_  256 f3:2f:f2:42:7f:77:d5:b1:cb:a8:53:b5:88:1f:7e:72 (EdDSA)
+443/tcp  open  ssl/http  Apache httpd 2.4.7 ((Ubuntu))
+|_http-server-header: Apache/2.4.7 (Ubuntu)
+|_http-title: Apache2 Ubuntu Default Page: It works
+| ssl-cert: Subject: commonName=ubuntu
+| Not valid before: 2015-07-06T09:49:24
+|_Not valid after:  2025-07-03T09:49:24
+|_ssl-date: TLS randomness does not represent time
+5666/tcp open  ssl/nrpe?
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for memorias.dcc.fc.up.pt (193.136.39.123)
+Host is up (0.029s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 a1:96:48:8e:9f:37:a7:3d:61:48:61:3c:bf:27:39:81 (RSA)
+|   256 24:df:6b:b3:8f:ad:25:05:9c:50:f0:5b:a7:b1:05:60 (ECDSA)
+|_  256 68:15:e0:c7:a0:18:c1:c3:95:34:23:a4:22:af:84:1c (EdDSA)
+5666/tcp open  ssl/nrpe?
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for mooshak2.dcc.fc.up.pt (193.136.39.124)
+Host is up (0.020s latency).
+Not shown: 996 filtered ports
+PORT     STATE SERVICE    VERSION
+22/tcp   open  ssh        OpenSSH 6.6.1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9f:0d:e6:69:fd:a9:fe:d5:13:b0:bc:b7:2d:7c:3e:7d (RSA)
+|_  256 a7:5a:e6:fb:0c:49:1b:8d:c8:bb:ee:7e:d7:05:70:6f (ECDSA)
+443/tcp  open  ssl/http   Apache httpd 2.4.6 ((CentOS) OpenSSL/1.0.2k-fips PHP/7.4.11)
+|_http-generator: WordPress 5.5.3
+| http-robots.txt: 1 disallowed entry 
+|_/wp-admin/
+|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.11
+|_http-title: Mooshak - Mooshak 2
+| ssl-cert: Subject: commonName=mooshak2.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:mooshak2.dcc.fc.up.pt
+| Not valid before: 2019-04-15T00:00:00
+|_Not valid after:  2021-04-19T12:00:00
+|_ssl-date: TLS randomness does not represent time
+1720/tcp open  tcpwrapped
+5666/tcp open  ssl/nrpe?
+
+Nmap scan report for tpas.alunos.dcc.fc.up.pt (193.136.39.125)
+Host is up (0.018s latency).
+Not shown: 996 filtered ports
+PORT     STATE SERVICE    VERSION
+80/tcp   open  tcpwrapped
+443/tcp  open  ssl/http   Apache httpd 2.4.29 ((Ubuntu))
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: TPAS 2020/2021 \xE2\x80\x93 Mestrado em Seguran\xC3\xA7a Inform\xC3\xA1tica - FCUP
+| ssl-cert: Subject: commonName=tpas.alunos.dcc.fc.up.pt/organizationName=Universidade do Porto/stateOrProvinceName=Porto/countryName=PT
+| Subject Alternative Name: DNS:tpas.alunos.dcc.fc.up.pt, DNS:www.tpas.alunos.dcc.fc.up.pt
+| Not valid before: 2020-09-30T00:00:00
+|_Not valid after:  2021-09-30T23:59:59
+|_ssl-date: TLS randomness does not represent time
+1720/tcp open  h323q931?
+5666/tcp open  ssl/nrpe?
+
+Nmap scan report for trice.dcc.fc.up.pt (193.136.39.126)
+Host is up (0.032s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 23:f9:f6:35:9f:23:5f:79:91:de:5f:7d:f8:1a:d9:46 (RSA)
+|   256 e1:40:95:49:bd:aa:45:d2:39:0a:17:a1:a9:92:bc:70 (ECDSA)
+|_  256 09:3b:93:b2:bd:41:0a:81:21:0c:c2:84:c9:d4:4d:33 (EdDSA)
+5666/tcp open  ssl/nrpe?
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for altimeter.dcc.fc.up.pt (193.136.39.131)
+Host is up (0.057s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE   VERSION
+22/tcp   open  ssh       OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 c0:24:bf:9c:f7:0b:2f:f0:72:7f:d0:37:b1:40:00:f6 (RSA)
+|   256 41:f5:b4:03:cd:90:55:e1:ae:5d:64:df:3a:2a:66:78 (ECDSA)
+|_  256 b7:e1:5f:1f:26:11:3d:1b:fb:21:7d:12:d8:f6:63:f5 (EdDSA)
+5666/tcp open  ssl/nrpe?
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for labcc.dcc.fc.up.pt (193.136.39.204)
+Host is up (0.032s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 6.6.1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9f:0d:e6:69:fd:a9:fe:d5:13:b0:bc:b7:2d:7c:3e:7d (RSA)
+|_  256 a7:5a:e6:fb:0c:49:1b:8d:c8:bb:ee:7e:d7:05:70:6f (ECDSA)
+443/tcp open  ssl/http Apache httpd
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache
+|_http-title: Site doesn't have a title (text/html).
+| ssl-cert: Subject: commonName=www.labcc.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:www.labcc.dcc.fc.up.pt, DNS:labcc.dcc.fc.up.pt
+| Not valid before: 2019-02-01T00:00:00
+|_Not valid after:  2021-02-05T12:00:00
+|_ssl-date: 2020-11-04T22:29:28+00:00; 0s from scanner time.
+
+Nmap scan report for webmail.labcc.dcc.fc.up.pt (193.136.39.206)
+Host is up (0.032s latency).
+Not shown: 999 filtered ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 6.6.1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9f:0d:e6:69:fd:a9:fe:d5:13:b0:bc:b7:2d:7c:3e:7d (RSA)
+|_  256 a7:5a:e6:fb:0c:49:1b:8d:c8:bb:ee:7e:d7:05:70:6f (ECDSA)
+
+Nmap scan report for sgl.labcc.dcc.fc.up.pt (193.136.39.207)
+Host is up (0.029s latency).
+Not shown: 999 filtered ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 6.6.1 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 9f:0d:e6:69:fd:a9:fe:d5:13:b0:bc:b7:2d:7c:3e:7d (RSA)
+|_  256 a7:5a:e6:fb:0c:49:1b:8d:c8:bb:ee:7e:d7:05:70:6f (ECDSA)
+
+Nmap scan report for codex.dcc.fc.up.pt (193.136.39.210)
+Host is up (0.037s latency).
+Not shown: 997 filtered ports
+PORT    STATE SERVICE  VERSION
+22/tcp  open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+80/tcp  open  http     Apache httpd 2.4.41
+443/tcp open  ssl/http Apache httpd 2.4.41 ((Ubuntu))
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-title: Codex 0.9
+| ssl-cert: Subject: commonName=codex.dcc.fc.up.pt/organizationName=Universidade do Porto/countryName=PT
+| Subject Alternative Name: DNS:codex.dcc.fc.up.pt, DNS:www.codex.dcc.fc.up.pt
+| Not valid before: 2020-04-23T00:00:00
+|_Not valid after:  2022-04-28T12:00:00
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Nmap scan report for 193.136.39.251
+Host is up (0.037s latency).
+Not shown: 999 filtered ports
+PORT    STATE SERVICE  VERSION
+443/tcp open  ssl/http Connectra Check Point Web Security httpd
+|_http-server-header: CPWS
+| http-title: FCUP VPN - You have no cookie support - Please enable cookies ...
+|_Requested resource was /Login/Login?CheckCookieSupport=1
+| ssl-cert: Subject: commonName=vpn.fc.up.pt/organizationName=Universidade do Porto/stateOrProvinceName=Porto/countryName=PT
+| Subject Alternative Name: DNS:vpn.fc.up.pt, DNS:www.vpn.fc.up.pt
+| Not valid before: 2020-07-10T00:00:00
+|_Not valid after:  2021-07-10T23:59:59
+|_ssl-date: 2020-11-04T22:28:58+00:00; 0s from scanner time.
+Service Info: Device: security-misc
+
+Post-scan script results:
+| clock-skew: 
+|   0s: 
+|     193.136.39.89 (hyrax.dcc.fc.up.pt)
+|     193.136.39.251
+|     193.136.39.60 (compass.dcc.fc.up.pt)
+|     193.136.39.19 (cvs.dcc.fc.up.pt)
+|     193.136.39.204 (labcc.dcc.fc.up.pt)
+|     193.136.39.1 (router.dcc.fc.up.pt)
+|     193.136.39.121 (sfp.dcc.fc.up.pt)
+|     193.136.39.91 (ecmlpkdd2015.dcc.fc.up.pt)
+|_    193.136.39.103 (webmail.alunos.dcc.fc.up.pt)
+| ssh-hostkey: Possible duplicate hosts
+| Key 2048 2c:0e:c0:f4:0c:73:e5:7d:87:c2:d5:ac:64:28:e2:a7 (RSA) used by:
+|   193.136.39.60
+|   193.136.39.62
+| Key 1024 10:ae:db:ca:fe:1b:ba:ee:0f:ac:a1:0a:40:5e:ff:23 (DSA) used by:
+|   193.136.39.60
+|   193.136.39.62
+| Key 256 a7:5a:e6:fb:0c:49:1b:8d:c8:bb:ee:7e:d7:05:70:6f (ECDSA) used by:
+|   193.136.39.19
+|   193.136.39.82
+|   193.136.39.103
+|   193.136.39.105
+|   193.136.39.114
+|   193.136.39.124
+|   193.136.39.204
+|   193.136.39.206
+|   193.136.39.207
+| Key 2048 9f:0d:e6:69:fd:a9:fe:d5:13:b0:bc:b7:2d:7c:3e:7d (RSA) used by:
+|   193.136.39.19
+|   193.136.39.82
+|   193.136.39.103
+|   193.136.39.105
+|   193.136.39.114
+|   193.136.39.124
+|   193.136.39.204
+|   193.136.39.206
+|_  193.136.39.207
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 256 IP addresses (44 hosts up) scanned in 11593.75 seconds
+

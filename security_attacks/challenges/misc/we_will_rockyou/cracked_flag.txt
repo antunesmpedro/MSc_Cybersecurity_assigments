@@ -1,0 +1,26 @@
+nao é necessario o ficheiro com as passwords rockyou.txt
+
+Utilizar JohnTheRipper/run/john
+comando john esta bugado (nao tem zip2john e assim o john nao reconhece as hashes)
+
+[JohnTheRipper/run/]
+./zip2john flag.zip > hash.txt
+./john hash.txt
+
+Using default input encoding: UTF-8
+Loaded 1 password hash (PKZIP [32/64])
+Will run 2 OpenMP threads
+Proceeding with single, rules:Single
+Press 'q' or Ctrl-C to abort, almost any other key for status
+Almost done: Processing the remaining buffered candidate passwords, if any.
+Proceeding with wordlist:./JohnTheRipper/run/password.lst
+tinkerbell       (flag.zip/flag.txt)     
+1g 0:00:00:00 DONE 2/3 (2020-12-05 16:36) 12.50g/s 332312p/s 332312c/s 332312C/s 123456..Peter
+Use the "--show" option to display all of the cracked passwords reliably
+Session completed. 
+
+password=tinkerbell
+
+unzip flag.zip
+flag.txt password: tinkerbell
+extraction of file flag.txt

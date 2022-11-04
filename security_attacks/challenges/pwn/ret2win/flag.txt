@@ -1,0 +1,13 @@
+aproveitar a falha de segurança na funcao gets()
+criar um buffer overflow com o tamanho correto 
+escrever por cima da pilha c com o caracter 'A' (ou outro qualquer) ate chegarmos ao ponto rip = ret
+utilizar gdb-gef 
+disassembler das funcoes main() e ir seguindo
+achar a funcao que usa gets()
+adicionar break (point) * [endereco de memoria]0x0804868d para o endereço de memoria de ret (retorno da funçao aberta)
+perceber o overflow do buffer que esta a acontecer até não dar seg fault
+encontrar o ponto em que rsp = outra coisa qualquer do que o suposto retorno para a funcao em que foi chamada
+esse é o número de A's certos para o exploit do overflow
+PODEMOS INJETAR um endereço de memória que nos dê jeito
+neste caso, achamos o endereço de memória da função win() com o disass win
+com o script em python injetamos os 'A' + o endereço de memoria da funcao win()

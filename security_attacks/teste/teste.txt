@@ -1,0 +1,98 @@
+|------------------|
+|  RECONHECIMENTO  |
+|------------------|
+
+dig
+subfinder
+httprobe
+dirsearch
+google dorks
+
+|------------------|
+|     SCANNING     |
+|------------------|
+
+nmap
+banner grabbing
+nc -v -n -w1 [IP] [StartPort:EndPort]
+wireshark
+
+echo "GET/index.html HTTP/1.1\r\nUser-Agent: nc/0.0.1\r\nHost: 193.136.39.125\r\nAccept:*/*\r\n\r\n" | nc 193.136.39.125 80
+
+(obter uma pagina HTTP via netcat)
+
+scapy
+(extrair os ips origem e destino de todos os pacotes)
+>>> set((p[IP].src,p[IP].dst) for p in PcapReader('dump.pcap') IF IP in p)
+
+(scapy a fazer port scanning a um endereço IP- saber as oirtas cin serviços abertos)
+
+|------------------------|
+|  EXPLOIT - METASPLOIT  |
+|------------------------|
+
+msfconsole
+   search
+   use "PATH"
+   show options
+   set RHOSTS = 'IP'
+   set RPORT = 'PORT'
+   exploit
+
+
+|------------------|
+|       MISC       |
+|------------------|   
+
+wireshark
+john -> JohnTheRipper/run/john
+  ./zip2john flag.zip > hash.txt
+  ./john hash.txt
+
+exiftool
+strings
+file
+
+
+|------------------|
+|        PWN       |
+|------------------|
+
+buffer overflow
+pwntools
+ROPgadget (pontos no programa com ret (ROP))
+gbd ./exe
+  r
+  b * endereco_memoria
+  disas func
+
+dmesg | tail
+
+python -c "print 'A'*50" | ./program
+import struct
+  struct.pack(0xendereco_memeoria) -> (converter em raw_bytes)
+pwn.p32|p64(0xendereco_memoria) -> (converter em raw bytes)
+checksec 'file'
+readelf -s program | grep -i "FUNC"  (encontrar enderecos memoria)
+
+|------------------|
+|      REVERSE     |
+|------------------|
+
+ghidra
+decompilers
+python scrips auxiliares
+
+
+|------------------|
+|        WEB       |
+|------------------|
+
+javaScript
+php
+LAB2_RECONHECIMENTO
+dirsearch -u 'URL' -E (procura de ficheiros bem conhecidos nos websites)
+cifras deterministicas para decifrar textos limpos
+   cifras sobre cifras
+XSS attacks
+

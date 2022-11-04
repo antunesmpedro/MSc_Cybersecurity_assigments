@@ -1,0 +1,5 @@
+https://www.yeahhub.com/use-netcat-listening-banner-grabbing-transferring-files/
+https://www.hak5.org/episodes/haktip-84
+https://jameshfisher.com/2018/12/31/how-to-make-a-webserver-with-netcat-nc/
+https://www.codementor.io/@arpitbhayani/http-requests-the-hard-way-with-netcat-5v0b1p5hg
+https://osric.com/chris/accidental-developer/2018/01/using-nc-netcat-to-make-an-http-request/

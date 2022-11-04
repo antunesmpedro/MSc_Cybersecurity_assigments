@@ -1,0 +1,12 @@
+abrir o codigo html
+script do form com o codigo da flag
+
+sha256 encontrado na net (ver melhor o johnTheRipper)
+decifrar a hash com o john
+
+atraves da tabela ASCII descobrir a password
+
+username = admin
+password = NeV3r_TrUSt_tHe_cL1ENt
+
+TPAS{admin:NeV3r_TrUSt_tHe_cL1ENt}

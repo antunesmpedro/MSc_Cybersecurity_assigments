@@ -1,0 +1,29 @@
+# Nmap 7.60 scan initiated Wed Nov  4 23:51:10 2020 as: nmap -O -A -oN scan_opsystem tpas.alunos.dcc.fc.up.pt
+Nmap scan report for tpas.alunos.dcc.fc.up.pt (193.136.39.125)
+Host is up (0.0038s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE   VERSION
+443/tcp  open  ssl/ssl   Apache httpd (SSL-only mode)
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-title: TPAS 2020/2021 \xE2\x80\x93 Mestrado em Seguran\xC3\xA7a Inform\xC3\xA1tica - FCUP
+| ssl-cert: Subject: commonName=tpas.alunos.dcc.fc.up.pt/organizationName=Universidade do Porto/stateOrProvinceName=Porto/countryName=PT
+| Subject Alternative Name: DNS:tpas.alunos.dcc.fc.up.pt, DNS:www.tpas.alunos.dcc.fc.up.pt
+| Not valid before: 2020-09-30T00:00:00
+|_Not valid after:  2021-09-30T23:59:59
+|_ssl-date: TLS randomness does not represent time
+5666/tcp open  ssl/nrpe?
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: bridge|general purpose
+Running (JUST GUESSING): Oracle Virtualbox (98%), QEMU (92%)
+OS CPE: cpe:/o:oracle:virtualbox cpe:/a:qemu:qemu
+Aggressive OS guesses: Oracle Virtualbox (98%), QEMU user mode network gateway (92%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT     ADDRESS
+1   0.18 ms _gateway (10.0.2.2)
+2   0.22 ms tpas.alunos.dcc.fc.up.pt (193.136.39.125)
+
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Nov  4 23:52:55 2020 -- 1 IP address (1 host up) scanned in 105.39 seconds

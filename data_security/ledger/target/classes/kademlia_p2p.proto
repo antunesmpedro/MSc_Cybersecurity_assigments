@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+option java_package = "kademlia_p2p.grpc";
+
+// Kademlia Node
+message Node{
+  int32 guid = 1;
+  string ip_address = 2;
+  int32 udpPort = 3;
+  map<int32,Node> closestNodes = 4;
+}
+
+// Kademlia Bucket
+//message Bucket{
+  //Node node = 1;
+  //int32 min_node_address = 2;
+  //int32 max_node_Address = 3;
+//}
+
+// REQUESTS-------------------------------------------------
+
+ // MESSAGE CLASS NODE,  USED IN PING, FIND NODE, FIND VALUE
+message NodeRequest{
+  Node node = 1;
+}
+
+ message FindNodeRequest{
+    Node requester = 1;
+    Node target = 2;
+ }
+
+// RESPONSES------------------------------------------------------
+
+//DEFAULT
+message APIResponse{
+  string responseMessage = 1;
+  int32 responseCode = 2;
+}
+
+message StoreResponse{
+  APIResponse defaultResponse = 1;
+}
+
+message FindNodeResponse{
+  APIResponse defaultResponse = 1;
+  //repeated Bucket hashTable = 2;
+  Node closestNode = 2;
+}
+
+
+//SERVICE-------------------------------------------------------
+
+service kademlia_p2p{
+  //rpc join(JoinRequest) returns(APIResponse);
+  rpc ping(NodeRequest) returns(APIResponse);
+  rpc store(NodeRequest) returns(StoreResponse);
+  rpc findNode(FindNodeRequest) returns(FindNodeResponse);
+  rpc find_value(NodeRequest) returns(APIResponse);
+}

@@ -1,0 +1,20 @@
+server{
+	listen 80;
+	server_name mydomain.com www.mydomain.com;
+	
+	location / {
+		include proxy_params;
+		proxy_pass http://unix:/home/pedroantunes/Desktop/seg_software/api/teste/server.sock;	
+		return 301 https://mydomain.com/;
+	}
+
+	listen 443 ssl;
+	ssl_certificate /home/pedroantunes/Desktop/seg_software/api/teste/sign_keys_pair/server-public-key.pem;
+	ssl_certificate_key /home/pedroantunes/Desktop/seg_software/api/teste/sign_keys_apir/server-private-key.pem;
+	ssl_ciphers AES128-SHA:AES256-SHA:RC4-SHA:DES-CBC3-SHA:RC4-MD5;
+	ssl_protocols TLSv1.2;
+	ssl_session_timeout 1d;
+	ssl_session_cache shared:SSL:50m;
+	ssl_stapling_verify on;
+	add_header strict-transport-security max_age=15768000
+}

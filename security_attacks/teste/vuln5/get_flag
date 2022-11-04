@@ -1,0 +1,15 @@
+reverse com o ghidra
+password encontrada
+letmein
+
+encontrar a porta
+brute force
+porta encontrada 
+3000
+
+nc 159.89.31.211 3000
+Give me the password: 
+letmein
+Here is your flag:
+TPAS{service_5_7a1344d3e7cd9bf896cd39fe75244924aec5f4b2}
+

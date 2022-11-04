@@ -1,0 +1,11 @@
+https://scapy.readthedocs.io/en/latest/usage.html
+https://scapy.readthedocs.io/en/latest/api/scapy.utils.html
+https://0xbharath.github.io/art-of-packet-crafting-with-scapy/scapy/inspecting_packets/index.html
+https://home.regit.org/2012/06/using-scapy-lfilter/
+https://stackoverflow.com/questions/20093238/get-ip-addresses-from-pcap-file-in-scapy
+https://www.thepythoncode.com/article/building-network-scanner-using-scapy
+https://www.uv.mx/personal/angelperez/files/2018/10/scanning_texto.pdf
+https://0xbharath.github.io/art-of-packet-crafting-with-scapy/scapy/sending_recieving/index.html
+https://resources.infosecinstitute.com/topic/port-scanning-using-scapy/
+https://www.mmu.ac.uk/media/mmuacuk/content/documents/school-of-computing-mathematics-and-digital-technology/blossom/Scapy-Scans,-Trace-Routes-and-TCP-Handshakes.pdf
+https://www.youtube.com/watch?v=LvaII2PEwcQ

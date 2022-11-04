@@ -1,0 +1,113 @@
+
+# Modeling and Predict 
+
+To model the data to train the model, we first take a reduced sample. This sample is balanced according to our target isFraud. 50% of the sample data has isFraud == 1 and the remaining 50% isFraud == 0
+
+```{r eval=TRUE, fig.align='center', fig.asp=0.5}
+train <- fread("train.csv", sep=",", header=TRUE)
+test <- fread("test.csv", sep=",", header=TRUE)
+
+ids <- sample(1:nrow(train), nrow(train))
+subtrain <- as.data.frame(train[ids,])
+
+
+subtrain_isFraud <- filter(subtrain, subtrain$isFraud==1)
+
+subtrain_notFraud <- filter(subtrain, subtrain$isFraud==0)
+ids_notFraud <- sample(1:nrow(subtrain_notFraud), nrow(subtrain_isFraud))
+subtrain_notFraud <- as.data.frame(subtrain_notFraud[ids_notFraud,])
+
+subtrain <- rbind(subtrain_isFraud, subtrain_notFraud)
+```
+
+
+Since we have several columns in the dataset that are completely filled with NAs, we find it best to eliminate columns that contain more than 5% of the values as NAs.
+```{r eval=TRUE, fig.align='center', fig.asp=0.5}
+subtrain[subtrain==''] <- NA
+data_na <- (colSums(is.na(subtrain)) / nrow(subtrain)) * 100
+d <- data_na[data_na <5]
+
+a <- attributes(d)
+subtrain <- subset(subtrain, select=unlist(a))
+a <- a$names[-2] # removing isFraud because test doesnt have this feature
+test <- subset(test, select=unlist(a))
+```
+
+After removal, we still have some values with NAs. For these cases, we find it best to replace the NAs with the mode for categorical values and the mean for numerical values.
+
+```{r eval=TRUE, fig.align='center', fig.asp=0.5}
+for(var in 1:ncol(subtrain)) {
+  if (class(subtrain[,var]) == "numeric") {
+    subtrain[is.na(subtrain[,var]), var] <- mean(subtrain[,var], na.rm = TRUE)
+  }
+  else if (class(subtrain[,var]) %in% c("character", "factor")) {
+    subtrain[is.na(subtrain[,var]), var] <- Mode(subtrain[,var], na.rm = TRUE)
+  }
+}
+```
+We only made this modification to the training dataset because when we also modified the test dataset, our accuracy was not good.
+
+
+
+Even so, using the summary function, we noticed that NA values still persisted. We don't know why this happened, however we tried to handle the NA values for card1-6.
+
+```{r eval=TRUE, fig.align='center', fig.asp=0.5}
+subtrain$card1[is.na(subtrain$card1)] <- 0
+subtrain$card2[is.na(subtrain$card2)] <- 0
+subtrain$card3[is.na(subtrain$card3)] <- 0
+subtrain$card5[is.na(subtrain$card5)] <- 0
+
+subtrain$card4[is.na(subtrain$card4)] <- ''
+subtrain$card6[is.na(subtrain$card6)] <- ''
+
+
+test$card1[is.na(test$card1)] <- 0
+test$card2[is.na(test$card2)] <- 0
+test$card3[is.na(test$card3)] <- 0
+test$card5[is.na(test$card5)] <- 0
+
+test$card4[is.na(test$card4)] <- ''
+test$card6[is.na(test$card6)] <- ''
+```
+
+For the TransactionDT column we have added 3 new columns. Regarding hour, weekday and month day. As stated in the data analysis, the day 0 date used was 1/1/2020
+```{r eval=TRUE, fig.align='center', fig.asp=0.5}
+day0 <- dmy_hms("1/1/2020 00:00:00 GMT")
+
+subtrain <- mutate(subtrain, hour=hour(day0+seconds(TransactionDT)))
+subtrain <- mutate(subtrain, mday=mday(day0+seconds(TransactionDT)))
+subtrain <- mutate(subtrain, wday=wday(day0+seconds(TransactionDT)))
+
+test <- mutate(test, hour=hour(day0+seconds(TransactionDT)))
+test <- mutate(test, mday=mday(day0+seconds(TransactionDT)))
+test <- mutate(test, wday=wday(day0+seconds(TransactionDT)))
+```
+
+That said, we tried using various models such as xgboost, boosting, and randomForest. After several attempts the best accuracy we could get was with xgboost with classification model.
+
+```{r eval=TRUE, fig.align='center', fig.asp=0.5}
+
+dummy <- dummyVars(" ~ .", data=subtrain)
+subtrain <- data.frame(predict(dummy, newdata = subtrain)) 
+
+dummy2 <- dummyVars(" ~ .", data=test)
+test <- data.frame(predict(dummy2, newdata = test))
+```
+Since the xgboost model only deals with numeric variables, we use the one hot encoding technique to transform categorical variables into numeric variables. One hot encoding add one new column reference to categorical column for each value that have it. For example, in card6 we have three possible values like "debit", "credit" and "chargecard". With one hot encoding we have 3 columns reference card6 like "card6debit", "card6credit" and "card6chargecard". The values of each this columns are binary (0 or 1).
+
+
+Finally, we train the models with the training dataset and without *TransactionID and isFraud* columns. We use the parameter eta= 0.15 to try to reduce overfitting. The maximum depth of the generated trees (maxdepth) we used a value of 10, the number of threads used was equal to 2 and the number of rounds used was 65. We used logistic regression for binary classification and output probability with "objective" parameter equal to "binary:logistic".
+
+```{r eval=TRUE, fig.align='center', fig.asp=0.5}
+m <- xgboost(data = data.matrix(subtrain[,-c(1,2)]), label = data.matrix(subtrain$isFraud), max.depth = 10, eta = 0.15, nthread = 2, nrounds = 65, objective = "binary:logistic", verbose = 1)
+test <- select(test,colnames(subtrain[,-2]))
+p <- predict(m, data.matrix(test[,-1]))
+head(p)
+
+submission <- data.frame(TransactionID=test$TransactionID, isFraud=p)
+
+if(any(is.na(submission))) submission[is.na(submission)] <- mean(submission$isFraud)
+
+write.csv(submission, file="submission.csv", row.names=FALSE)
+```
+That said, we try to guess the values of isFraud for each transaction in the test dataset and store our predictions in a variable. We associate the transaction identifier with each value we guess and write this to a csv format.

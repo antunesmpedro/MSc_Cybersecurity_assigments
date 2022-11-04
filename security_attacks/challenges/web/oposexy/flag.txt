@@ -1,0 +1,34 @@
+criar uma nova conta na app
+
+username:ptr
+password:antunes
+email:ptr@gmail.com
+
+ler o QRCode, e examinar o codigo que está no conteúdo.
+
+  MmYzYjE2MGRiNzMyYjQ5NWIxNzYzNTA3M2IyZGE5ZDQ6cnRw
+
+ver o algoritmo de cifra determinísitca utilizado = Base64
+
+  2f3b160db732b495b17635073b2da9d4:rtp
+
+O código é:
+
+  Base64(reverse(md5(username)):reverse(username))
+
+  reverse(username) = rtp  
+  md5(username) = 4d9ad2b37053671b594b237bd061b3f2
+  reverse(md5(username)) = 2f3b160db732b495b17635073b2da9d4
+
+
+criar um QRcode a partir da chave do código, com as credencias do oposexy
+
+ codigo é:
+     f0b69f28039dda5d717703397d1fd276:yxesopo
+
+qrcode = oposexy_qrcode.jpg
+
+
+Welcome back, Alfredo Eraldonclóbes Texugueiro de Souza
+
+TPAS{Alfredo Eraldonclobes Texugueiro de Souza}     

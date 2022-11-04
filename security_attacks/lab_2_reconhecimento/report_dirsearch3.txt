@@ -1,0 +1,16 @@
+403   166B   https://careers.airbnb.com:443/.github/workflows/publish.yml
+302     0B   https://careers.airbnb.com:443/Brocfile.js    -> REDIRECTS TO: https://www.airbnb.com/resources/hosting-homes/t/professional-hosting-36
+302     0B   https://careers.airbnb.com:443/Gruntfile.js    -> REDIRECTS TO: https://www.airbnb.com/resources/hosting-homes/t/professional-hosting-36
+302     0B   https://careers.airbnb.com:443/app.js    -> REDIRECTS TO: https://www.airbnb.com/resources/hosting-homes/t/professional-hosting-36
+301     0B   https://careers.airbnb.com:443/bitrix/admin/index.php    -> REDIRECTS TO: https://careers.airbnb.com/bitrix/admin/
+302     0B   https://careers.airbnb.com:443/brunch-config.js    -> REDIRECTS TO: https://www.airbnb.com/resources/hosting-homes/t/professional-hosting-36
+302     0B   https://careers.airbnb.com:443/chat.js    -> REDIRECTS TO: https://news.airbnb.com/chat.js
+302     0B   https://careers.airbnb.com:443/de.js    -> REDIRECTS TO: https://news.airbnb.com/de.js
+302     0B   https://careers.airbnb.com:443/editpost.js    -> REDIRECTS TO: https://news.airbnb.com/editpost.js
+200    24KB  https://careers.airbnb.com:443/favicon.ico
+302     0B   https://careers.airbnb.com:443/gulpfile.js    -> REDIRECTS TO: https://news.airbnb.com/gulpfile.js
+302     0B   https://careers.airbnb.com:443/index.js    -> REDIRECTS TO: https://news.airbnb.com/index.js
+302     0B   https://careers.airbnb.com:443/mimosa-config.js    -> REDIRECTS TO: https://news.airbnb.com/mimosa-config.js
+200    67B   https://careers.airbnb.com:443/robots.txt
+302     0B   https://careers.airbnb.com:443/server.js    -> REDIRECTS TO: https://news.airbnb.com/server.js
+302     0B   https://careers.airbnb.com:443/swfobject.js    -> REDIRECTS TO: https://news.airbnb.com/swfobject.js
